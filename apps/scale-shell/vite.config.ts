@@ -14,6 +14,9 @@ export default {
       shared: ['react', 'react-dom', 'xstate', 'zustand'],
     }),
   ],
+  optimizeDeps: {
+    exclude: ['produceScale/App', 'colleagueMenu/App', 'notification/App'],
+  },
   build: {
     outDir: 'dist',
     target: 'esnext',
