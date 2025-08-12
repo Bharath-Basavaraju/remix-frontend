@@ -1,6 +1,7 @@
 # Remix Micro Frontends
 
-This repo showcases a Remix-based micro-frontend architecture with a shell application (**ScaleShell**) and three child apps (**ProduceScale**, **ColleagueMenu**, and **Notification**).  The shell loads each child at runtime via webpack Module Federation, routes with XState, and shares state through a Zustand store.
+This repo showcases a Remix-based micro-frontend architecture with a shell application (**ScaleShell**) and three child apps (**ProduceScale**, **ColleagueMenu**, and **Notification**).  The shell loads each child at runtime via Vite Module Federation, routes with XState, and shares state through a Zustand store.
+
 
 ## Local development
 

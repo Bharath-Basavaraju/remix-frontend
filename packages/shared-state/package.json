@@ -1,5 +1,9 @@
 {
   "name": "shared-state",
   "version": "1.0.0",
-  "main": "store.ts"
+  "main": "store.ts",
+  "dependencies": {
+    "react": "^18.2.0",
+    "zustand": "^4.4.0"
+  }
 }
