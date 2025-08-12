@@ -1,12 +1,9 @@
 {
   "name": "shared-state",
   "version": "1.0.0",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
-    }
+     ".": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup"
