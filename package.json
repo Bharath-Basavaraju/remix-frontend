@@ -1,0 +1,18 @@
+{
+  "name": "remix-mf-root",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build:shell": "npm --prefix apps/scale-shell run build",
+    "build:produce": "npm --prefix apps/produce-scale run build",
+    "build:colleague": "npm --prefix apps/colleague-menu run build",
+    "build:notification": "npm --prefix apps/notification run build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^1.2.2"
+  }
+}
