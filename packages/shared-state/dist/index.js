@@ -1,9 +1,14 @@
 // store.ts
-import create from "zustand";
-var useSharedState = create((set) => ({
-  count: 0,
-  increment: () => set((s) => ({ count: s.count + 1 }))
-}));
+import { atom } from "nanostores";
+import { useStore } from "@nanostores/react";
+var countStore = atom(0);
+var increment = () => {
+  countStore.set(countStore.get() + 1);
+};
+function useSharedState() {
+  const count = useStore(countStore);
+  return { count, increment };
+}
 export {
   useSharedState
 };

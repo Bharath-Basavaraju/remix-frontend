@@ -1,9 +1,7 @@
 "use strict";
-var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -17,14 +15,6 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // index.ts
@@ -35,11 +25,16 @@ __export(shared_state_exports, {
 module.exports = __toCommonJS(shared_state_exports);
 
 // store.ts
-var import_zustand = __toESM(require("zustand"), 1);
-var useSharedState = (0, import_zustand.default)((set) => ({
-  count: 0,
-  increment: () => set((s) => ({ count: s.count + 1 }))
-}));
+var import_nanostores = require("nanostores");
+var import_react = require("@nanostores/react");
+var countStore = (0, import_nanostores.atom)(0);
+var increment = () => {
+  countStore.set(countStore.get() + 1);
+};
+function useSharedState() {
+  const count = (0, import_react.useStore)(countStore);
+  return { count, increment };
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   useSharedState

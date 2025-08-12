@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { useSharedState } from './store';
+import { countStore, increment } from './store';
 
 describe('shared state store', () => {
   it('increments the count', () => {
-    expect(useSharedState.getState().count).toBe(0);
-    useSharedState.getState().increment();
-    expect(useSharedState.getState().count).toBe(1);
+    expect(countStore.get()).toBe(0);
+    increment();
+    expect(countStore.get()).toBe(1);
   });
 });
