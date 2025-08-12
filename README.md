@@ -8,15 +8,20 @@ This repo showcases a Remix-based micro-frontend architecture with a shell appli
    ```bash
    npm install
    ```
-2. Build the child apps so their federated modules are available to the shell:
+
+2. Build the child apps so their federated modules are available to the shell. Run this again whenever you change a child app:
    ```bash
    npm --prefix apps/scale-shell run build:remotes
    ```
-3. Start the shell:
+3. Start the shell's Remix dev server, which serves the child apps at runtime:
    ```bash
-   npm --prefix apps/scale-shell run dev          # http://localhost:3000
+   npm --prefix apps/scale-shell run dev
    ```
 4. Open http://localhost:3000 to interact with the shell application.
+5. (Optional) run the unit tests:
+   ```bash
+   npm test
+   ```
 
 ## Production
 
