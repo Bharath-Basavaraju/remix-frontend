@@ -12,7 +12,7 @@ export default {
       exposes: {
         './App': './app/remote.tsx',
       },
-      shared: ['zustand'],
+      shared: ['zustand', 'shared-state'],
     }),
   ],
   build: {
