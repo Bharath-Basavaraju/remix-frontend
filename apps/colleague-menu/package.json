@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "remix dev",
-    "build": "remix build && vite build",
+    "dev": "vite dev",
+    "build": "vite build",
     "start": "remix-serve build"
   },
   "dependencies": {
