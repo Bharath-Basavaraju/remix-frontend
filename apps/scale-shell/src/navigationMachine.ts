@@ -17,5 +17,4 @@ export const navigationMachine = createMachine(
       colleagueMenu: { on: { SHELL: 'shell' } },
       notification: { on: { SHELL: 'shell' } }
     }
-  }
 );
