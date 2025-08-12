@@ -16,6 +16,7 @@ export default {
   ],
   optimizeDeps: {
     // avoid pre-bundling federated modules during dev
+
     exclude: ['produceScale/App', 'colleagueMenu/App', 'notification/App'],
   },
   build: {
