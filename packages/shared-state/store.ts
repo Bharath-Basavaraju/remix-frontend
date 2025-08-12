@@ -1,11 +1,13 @@
-import create from 'zustand';
+import { atom } from 'nanostores';
+import { useStore } from '@nanostores/react';
 
-interface SharedState {
-  count: number;
-  increment: () => void;
+export const countStore = atom(0);
+
+export const increment = () => {
+  countStore.set(countStore.get() + 1);
+};
+
+export function useSharedState() {
+  const count = useStore(countStore);
+  return { count, increment };
 }
-
-export const useSharedState = create<SharedState>((set) => ({
-  count: 0,
-  increment: () => set((s) => ({ count: s.count + 1 }))
-}));
