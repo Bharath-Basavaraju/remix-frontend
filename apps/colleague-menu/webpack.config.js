@@ -14,7 +14,6 @@ module.exports = {
       name: 'colleagueMenu',
       filename: 'remoteEntry.js',
       exposes: { './App': './app/remote' },
-      shared: ['react', 'react-dom', 'zustand']
     })
   ],
   output: {
