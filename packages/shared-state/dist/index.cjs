@@ -35,7 +35,7 @@ __export(shared_state_exports, {
 module.exports = __toCommonJS(shared_state_exports);
 
 // store.ts
-var import_zustand = __toESM(require("zustand"));
+var import_zustand = __toESM(require("zustand"), 1);
 var useSharedState = (0, import_zustand.default)((set) => ({
   count: 0,
   increment: () => set((s) => ({ count: s.count + 1 }))
