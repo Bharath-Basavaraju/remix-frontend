@@ -18,5 +18,13 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     target: 'esnext',
+    rollupOptions: {
+      // mark federated modules as external so Vite doesn't try to bundle them
+      external: [
+        'produceScale/App',
+        'colleagueMenu/App',
+        'notification/App',
+      ],
+    },
   },
 });
