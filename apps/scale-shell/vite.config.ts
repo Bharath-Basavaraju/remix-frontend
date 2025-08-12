@@ -13,7 +13,6 @@ export default {
         colleagueMenu: '/remotes/colleague-menu/remoteEntry.js',
         notification: '/remotes/notification/remoteEntry.js',
       },
-      shared: ['xstate', 'zustand'],
     }),
   ],
   optimizeDeps: {
