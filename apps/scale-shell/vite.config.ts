@@ -13,7 +13,10 @@ export default {
         colleagueMenu: '/remotes/colleague-menu/remoteEntry.js',
         notification: '/remotes/notification/remoteEntry.js',
       },
-      shared: ['shared-state'],
+      shared: {
+        'shared-state': { singleton: true, eager: true, requiredVersion: false },
+        zustand: { singleton: true, requiredVersion: false },
+      },
     }),
   ],
   optimizeDeps: {

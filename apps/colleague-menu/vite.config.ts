@@ -12,7 +12,10 @@ export default {
       exposes: {
         './App': './app/remote.tsx',
       },
-      shared: ['zustand', 'shared-state'],
+      shared: {
+        'shared-state': { singleton: true, eager: true, requiredVersion: false },
+        zustand: { singleton: true, requiredVersion: false },
+      },
     }),
   ],
   build: {
