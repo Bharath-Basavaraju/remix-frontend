@@ -2,7 +2,7 @@ const path = require('path');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './app/entry.client.tsx',
   mode: 'development',
   devServer: { port: 3000 },
   resolve: { extensions: ['.tsx', '.ts', '.js'] },
@@ -13,9 +13,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'shell',
       remotes: {
-        produceScale: 'produceScale@http://localhost:3001/remoteEntry.js',
-        colleagueMenu: 'colleagueMenu@http://localhost:3002/remoteEntry.js',
-        notification: 'notification@http://localhost:3003/remoteEntry.js'
+        produceScale: 'produceScale@/remotes/produce-scale/remoteEntry.js',
+        colleagueMenu: 'colleagueMenu@/remotes/colleague-menu/remoteEntry.js',
+        notification: 'notification@/remotes/notification/remoteEntry.js'
       },
       shared: ['react', 'react-dom', 'xstate', 'zustand']
     })

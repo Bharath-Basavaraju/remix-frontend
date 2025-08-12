@@ -3,17 +3,25 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "start": "node dist/bundle.js"
+    "dev": "remix dev",
+    "build:remotes": "npm --prefix ../produce-scale run build && npm --prefix ../colleague-menu run build && npm --prefix ../notification run build && mkdir -p public/remotes/produce-scale public/remotes/colleague-menu public/remotes/notification && cp ../produce-scale/dist/remoteEntry.js public/remotes/produce-scale/ && cp ../colleague-menu/dist/remoteEntry.js public/remotes/colleague-menu/ && cp ../notification/dist/remoteEntry.js public/remotes/notification/",
+    "build": "npm run build:remotes && remix build && webpack --config webpack.config.js",
+    "start": "remix-serve build"
   },
   "dependencies": {
+    "@remix-run/node": "^2.0.0",
     "@remix-run/react": "^2.0.0",
+    "@xstate/react": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "shared-state": "workspace:*",
     "xstate": "^4.37.0",
     "zustand": "^4.4.0"
   },
   "devDependencies": {
+    "@remix-run/dev": "^2.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "ts-loader": "^9.5.0",
     "typescript": "^5.0.0",
     "webpack": "^5.88.0",

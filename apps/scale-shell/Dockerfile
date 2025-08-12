@@ -1,7 +1,12 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY package.json .
-RUN npm install --production || true
+
+# Copy repo and install all workspaces
 COPY . .
-RUN npm run build || true
-CMD ["node", "dist/bundle.js"]
+RUN npm install
+
+# Build shell along with child apps
+RUN npm run build:shell
+
+# Start the Remix server
+CMD ["npm", "--prefix", "apps/scale-shell", "run", "start"]

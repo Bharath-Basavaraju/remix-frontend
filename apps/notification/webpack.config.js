@@ -2,7 +2,7 @@ const path = require('path');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 
 module.exports = {
-  entry: './src/App.tsx',
+  entry: './app/remote.tsx',
   mode: 'development',
   devServer: { port: 3003 },
   resolve: { extensions: ['.tsx', '.ts', '.js'] },
@@ -13,7 +13,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'notification',
       filename: 'remoteEntry.js',
-      exposes: { './App': './src/App' },
+      exposes: { './App': './app/remote' },
       shared: ['react', 'react-dom', 'zustand']
     })
   ],
