@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev",
-    "build:remotes": "npm --prefix ../produce-scale run build && npm --prefix ../colleague-menu run build && npm --prefix ../notification run build && mkdir -p public/remotes/produce-scale public/remotes/colleague-menu public/remotes/notification && cp ../produce-scale/dist/remoteEntry.js public/remotes/produce-scale/ && cp ../colleague-menu/dist/remoteEntry.js public/remotes/colleague-menu/ && cp ../notification/dist/remoteEntry.js public/remotes/notification/",
+    "build:remotes": "npm --prefix ../produce-scale run build && npm --prefix ../colleague-menu run build && npm --prefix ../notification run build && mkdir -p public/remotes/produce-scale public/remotes/colleague-menu public/remotes/notification && cp ../produce-scale/build/client/remoteEntry.js public/remotes/produce-scale/ && cp ../colleague-menu/build/client/remoteEntry.js public/remotes/colleague-menu/ && cp ../notification/build/client/remoteEntry.js public/remotes/notification/",
     "build": "npm run build:remotes && vite build",
     "start": "remix-serve build"
   },
