@@ -3,6 +3,7 @@ import { createMachine } from 'xstate';
 export const navigationMachine = createMachine(
   {
     id: 'navigation',
+    predictableActionArguments: true,
     initial: 'shell',
     states: {
       shell: {
@@ -16,6 +17,4 @@ export const navigationMachine = createMachine(
       colleagueMenu: { on: { SHELL: 'shell' } },
       notification: { on: { SHELL: 'shell' } }
     }
-  },
-  { predictableActionArguments: true }
 );

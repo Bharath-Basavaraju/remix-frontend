@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { interpret } from 'xstate';
-import { navigationMachine } from './navigationMachine';
+import { navigationMachine } from '../src/navigationMachine';
 
 describe('navigation state machine', () => {
   it('navigates between shell and produce scale', () => {
